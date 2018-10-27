@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Website Tutorial</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+  		.navbar{
+  			margin-bottom:0;
+  			border-radius: 0;
+  			background-color: #5E4485;
+  			color: #fff;
+  			padding: 1% 0;
+  			
+  			font-size:1.2em;
+  			border: 0;
+
+  		}
+
+  		.navbar-brand{
+  			float:left;
+  			min-height: 55px;
+  			padding:0 15px 5px;
+  		}
+  		.navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover
+  		{
+  			color:#fff;
+  			background-color: #5e4484;
+
+  		}
+  		.navbar-inverse .navbar-nav li a{
+  			color:#d5d5d5;
+  		}
+  		.carousel-caption{
+  			top:50%;
+  			transform: trnslateY(-50%);
+  			text-transform: uppercase;
+  		}
+
+  		.btn{
+  			font-size:18px;
+  			color:#fff;
+  			padding:12px 22px;
+  			background-color:#5e4485;
+  			border: 2px solid #fff;
+  		}
+
+  		@media(max-width:600px){
+  			.carousel-caption{
+  			display:none;}
+  			#icon{
+  				max-width: 150px;
+  			}
+  			h2{
+  				font-size:1.7em;
+
+  			}
+  		}
+
+  		#icon{
+  			max-width: 200px;
+  			margin:1% auto;
+  		}
+
+  		.container{
+  			margin:4% auto;
+  		}
+
+  		footer{
+  			width:100%;
+  			background-color: #5e4485;
+  			padding:3%;
+  			color:#fff;
+  		}
+  </style>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand"><img src="1132.jpg"></a></div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#">Register</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	
+	<div class="container text-center">
+		<h2>What do you need help with?</h2><br>
+		<div class="row">
+			<div class="col-sm-4 bg-primary mr=" style="height: 100px; ">
+				
+				<a href="data.php"><h4 style="color:black; margin-top: 20px;">Plumber</h4></a>
+			</div>
+
+			
+			<div class="col-sm-4 bg-success" style="height: 100px; ">
+				
+				<a href="data.php"><h4 style="color:black; margin-top: 20px;">Electric Equipments</h4></a>
+			</div>
+			
+			<div class="col-sm-4 bg-warning" style="height: 100px; ">
+				
+				<a href="data.php"><h4 style="color:black; margin-top: 20px;">Painter</h4></a>
+			</div>
+
+			
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h4>Here's the cool thing about bootstrap</h4>
+					<p>Bootstrap, originally named Twitter Blueprint, was developed by Nirav Panchal and Jacob Thornton at Twitter as a framework to encourage consistency across internal tools. Before Bootstrap, various libraries were used for interface development, which led to inconsistencies and a high maintenance burden. According to Twitter developer Mark Otto: </p>
+				
+			</div>
+			<div class="col-md-6">
+				<img src="img/bootstrap2.jpg" class="img-responsive">
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Built with Saas</h4>
+					<p>Bootstrap, originally named Twitter Blueprint, was developed by Nirav Panchal and Jacob Thornton at Twitter as a framework to encourage consistency across internal tools. Before Bootstrap, various libraries were used for interface development, which led to inconsistencies and a high maintenance burden. According to Twitter developer Mark Otto: </p>
+				
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<img src="img/sass.png" class="img-responsive">
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<h4><a href="#hidden" data-toggle="collapse">Care to learn more about Bootstrap?</a></h4>
+			<div id="hidden" class="collapse">
+				<h4>Here's the cool thing about bootstrap</h4>
+				<p>Bootstrap, originally named Twitter Blueprint, was developed by Nirav Panchal and Jacob Thornton at Twitter as a framework to encourage consistency across internal tools. Before Bootstrap, various libraries were used for interface development, which led to inconsistencies and a high maintenance burden. According to Twitter developer Mark Otto:</p>
+			</div>
+		</div>
+	</div>
+-->
+
+	<footer class="container-fluid text-center" >
+		<div class="row">
+			<div class="col-sm-4">
+				<h3>Contact Us</h3></br>
+				<h4>Our contact and address</h4>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
+
