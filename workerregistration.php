@@ -45,6 +45,16 @@
 body{
 	background-color: white;
 }
+.background{
+
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+
+}
 
 .heading_h1{
 	color: #00a4e4;
@@ -124,9 +134,10 @@ input[type="password"]:focus{
 
 <div class="container mainContent">
 	<h1 class="text-center heading_h1">E-Worker <span class="sub_h1">- Registration Form</span></h1>
+	<canvas class="background"></canvas>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3 loginContainer">
-			<form method="post" action="registration.php">
+			<form method="post" action="workerregistration.php">
 				
 				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 form-group" >
 					<input type="text" name="name" placeholder="Name" class="form-control" style="border-radius: 20px;" required="" />
@@ -136,7 +147,7 @@ input[type="password"]:focus{
 
 
 				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
-					<input  type="email" placeholder="Email" class="form-control" style="border-radius: 20px;" required=""/>
+					<input  name="email" placeholder="Email" class="form-control" style="border-radius: 20px;" required=""/>
 				</div>
 
 				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
@@ -144,7 +155,7 @@ input[type="password"]:focus{
 				</div>
 
 				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
-					<input type="number" placeholder="Contact Number" class="form-control" style="border-radius: 20px;" required="" />
+					<input  name="contact" placeholder="Contact Number" class="form-control" style="border-radius: 20px;" required="" />
 				</div>
 
 				
@@ -159,7 +170,19 @@ input[type="password"]:focus{
 				</div>
 
 				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
-					<input  name="skillSet" placeholder="Skill Set(Write all which apply)" class="form-control" required  style="border-radius: 20px;" />
+					<select name="skillSet" class="form-control" required style="border-radius: 20px;">
+						<option value="select">Select SKill Set</option>
+						<option value="plumber">Plumber</option>
+						<option value="electrician">Electrician</option>
+						<option value="painter">Painter</option>
+					</select>
+				
+					<!--<input  name="skillSet" placeholder="Skill Set(Write all which apply)" class="form-control" required  style="border-radius: 20px;" />
+					<select>
+						<option>Plumber</option>
+						<option>Electrician</option>
+						<option>Painter</option>
+					</select>-->
 				</div>
 
 				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
@@ -181,6 +204,7 @@ input[type="password"]:focus{
 	</div>
 </div>
 
+<script type="text/javascript" src="script.js"></script>
 
 	<!-- jQuery CDN -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -188,5 +212,5 @@ input[type="password"]:focus{
 	<!-- Bootstrap JS CDN -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-</body>
+</body><script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
 </html>

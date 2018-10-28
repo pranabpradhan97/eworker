@@ -1,26 +1,43 @@
 <?php
-	session_start();
-	$con=mysqli_connect("localhost","root","","eworker");
-
-	if(isset($_POST['login']))
+session_start();
+	if(isset($_SESSION['email']))
 	{
-		$name=$_REQUEST["name"];
-		$email=$_REQUEST["email"];
-		$password=$_REQUEST["password"];
-		$password=md5($password);
-		$contact=$_REQUEST["contact"];
-		$address=$_REQUEST["address"];
-		$pinCode=$_REQUEST["pinCode"];
-		$skillSet=$_REQUEST["skillSet"];
-		$workExperience=$_REQUEST["workExperience"];
-		$comment=$_REQUEST["comment"];
-		
-		mysqli_query($con,"insert into workerregistration values('$name','$email','$password','$contact','$address','$pinCode','$skillSet','$workExperience','$comment')");
-		echo "registration successful";
+
+	}
+
+	if(isset($_REQUEST["login"]))
+	{
+			$con=mysqli_connect("localhost","root","","eworker");
+			$email=mysqli_real_escape_string($con,$_POST["email"]);
+			$password=mysqli_real_escape_string($con,$_POST["password"]);
+			$password=md5($password);
+			$result=mysqli_query($con,"SELECT * from workeregistration where email='$email' and password='$password'");
+
+			if($arr=mysqli_fetch_array($result))
+			{
+				$_SESSION["email"]=$email;
+				header('location:workerdetailschange.php');
+
+
+			}
+			else
+			{
+				echo "Invalid Details";
+			}
+
+
 	}
 
 
+
+
 ?>
+
+
+
+
+
+
 
 
 <html>
@@ -46,6 +63,17 @@ body{
 	background-color: white;
 }
 
+.background{
+
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+
+}
+
 .heading_h1{
 	color: #00a4e4;
 	font-family: 'Raleway', sans-serif;
@@ -60,7 +88,7 @@ body{
 
 .loginContainer{
 	background-color: #12d3f6;
-	height: 580px;
+	height: 300px;
 	border-radius: 10px;
 	padding-top: 100px;
 	font-family: 'Quicksand', sans-serif;
@@ -123,55 +151,33 @@ input[type="password"]:focus{
 <body>
 
 <div class="container mainContent">
-	<h1 class="text-center heading_h1">E-Worker <span class="sub_h1">- Registration Form</span></h1>
+	<h1 class="text-center heading_h1">	WORKER <span class="sub_h1"> Login </span></h1>
+	<canvas class="background"></canvas>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3 loginContainer">
-			<form method="post" action="registration.php">
+			<form method="post" action="workerlogin.php">
 				
-				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 form-group" >
-					<input type="text" name="name" placeholder="Name" class="form-control" style="border-radius: 20px;" required="" />
-				</div> 
-
 				
 
-
+				
 				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
-					<input  type="email" placeholder="Email" class="form-control" style="border-radius: 20px;" required=""/>
+					<input  type="email" name="email" placeholder="Email" class="form-control" style="border-radius: 20px;" required=""/>
 				</div>
 
 				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
 					<input type="password" name="password" placeholder="Password" class="form-control" required="" />
 				</div>
 
-				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
-					<input type="number" placeholder="Contact Number" class="form-control" style="border-radius: 20px;" required="" />
-				</div>
-
+				
 				
 
 
-				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
-					<input  name="address" placeholder="Address" class="form-control" required  style="border-radius: 20px;" />
-				</div>
+				
 
-				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
-					<input  name="pinCode" placeholder="pinCode" class="form-control" required  style="border-radius: 20px;" />
-				</div>
-
-				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
-					<input  name="skillSet" placeholder="Skill Set(Write all which apply)" class="form-control" required  style="border-radius: 20px;" />
-				</div>
-
-				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
-					<input  name="workExperience" placeholder="Work Experience(in years)" class="form-control" required  style="border-radius: 20px;" />
-				</div>
-
-				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group">
-					<input  name="comment" placeholder="Any additional comments" class="form-control" required  style="border-radius: 20px;" />
-				</div>
+				
 
 				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2  form-group" align="center">
-					<button class="login_btn" name="login">Register</button>
+					<button class="login_btn" name="login">Login</button>
 					
 				</div>
 			</form>
@@ -180,6 +186,7 @@ input[type="password"]:focus{
 		</div>
 	</div>
 </div>
+<script type="text/javascript" src="script.js"></script>
 
 
 	<!-- jQuery CDN -->
@@ -188,5 +195,5 @@ input[type="password"]:focus{
 	<!-- Bootstrap JS CDN -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-</body>
+</body><script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
 </html>

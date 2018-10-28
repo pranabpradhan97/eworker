@@ -6,7 +6,7 @@
 
 
 
-				$sql="SELECT name, email, contact, workExperience, comment from workerregistration where skillSet='Plumber'";
+				$sql="SELECT name, email, contact, workExperience, comment from workerregistration where skillSet='Electrician'";
 				$result=mysqli_query($con,$sql);
 
 				$resultCheck=mysqli_num_rows($result);
