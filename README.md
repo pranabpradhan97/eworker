@@ -1,9 +1,9 @@
 # eworker
 
-Not finished
+Ongoing project
 
 
-A Web application where a customer can hire workers online based on the workers skill set and the job requirement. The application helps to solve the household maintenance issues in day to day life. The search results will be based on the persons city and provide the necessary details about the worker.
+A Web application where a customer can hire workers online based on the workers skill set and the job requirement. The application helps to solve the household maintenance issues in day to day life. The search results will be based on the persons city and provide the necessary details about the worker.They can even give reviews to each other for better search.
 
 ![Screenshot (55)](https://user-images.githubusercontent.com/32243436/56145339-bdd9b880-5fc1-11e9-99d4-f0044b05dea6.png)
 
