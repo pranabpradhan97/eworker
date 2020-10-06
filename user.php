@@ -76,8 +76,8 @@ body{
 
 input[type="text"]{
     border-radius:30px;
-    -moz-border-radius:30px;
-    -webkit-border-radius:30px;
+    -moz-border-radius:25px;
+    -webkit-border-radius:29px;
 }
 
 input[type="text"]:focus{
@@ -133,7 +133,7 @@ input[type="password"]:focus{
 <div class="container mainContent">
 	<h1 class="text-center heading_h1">	USER <span class="sub_h1"> Registration </span></h1>
 	<canvas class="background"></canvas>
-	<div class="row">
+	<div class="row center">
 		<div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3 loginContainer">
 			<form method="post" action="user.php">
 				
