@@ -109,8 +109,8 @@
 
 							<li><a href="#" class=" dropdown-toggle" data-toggle="dropdown">Login</a>
 							<div class="dropdown-menu">
-    							<a class="dropdown-item" href="workerlogin.php" style="color:black;">Worker</a>
-    							<a class="dropdown-item" href="userlogin.php" style="color: black;">User</a>
+    							<a class="dropdown-item" href="workerlogin.php" style="color:black;">Worker Login</a>
+    							<a class="dropdown-item" href="userlogin.php" style="color: black;">User Login</a>
    									 
  							 </div>
 							</li>
